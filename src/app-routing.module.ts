@@ -1,3 +1,4 @@
+import { PostcodeComponent } from './postcode/postcode.component';
 import { SuburbComponent } from './suburb/suburb.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -11,6 +12,10 @@ const routes: Routes = [
   {
     path: 'suburb',
     component: SuburbComponent
+  },
+  {
+    path: 'postcode',
+    component: PostcodeComponent
   },
   { path: '',
     redirectTo: '/daily',

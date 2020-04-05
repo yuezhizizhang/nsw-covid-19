@@ -9,12 +9,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { DailyComponent } from './daily/daily.component';
 import { SuburbComponent } from './suburb/suburb.component';
+import { PostcodeComponent } from './postcode/postcode.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     DailyComponent,
-    SuburbComponent
+    SuburbComponent,
+    PostcodeComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +25,8 @@ import { SuburbComponent } from './suburb/suburb.component';
     NgxChartsModule,
     ClarityModule,
     BrowserAnimationsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

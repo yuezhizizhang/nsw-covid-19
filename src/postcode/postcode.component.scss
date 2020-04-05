@@ -1,0 +1,53 @@
+@import '../mixin.scss';
+
+:host {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  width: 100%;
+  max-height: 100%;
+}
+
+.sidenav {
+  background: #1b1e27;
+  border-right: 1px solid #455066;
+}
+
+.content-area {
+  padding: 0 !important;
+}
+
+.title {
+  @include flexbox;
+  padding-left: 1rem;
+}
+
+.chart-container {
+  @include flexbox-column-fill-space;
+  height: 80%;
+}
+
+.count-title {
+  margin-left: 2rem;
+  color: #bb86fc;
+  font-weight: bold;
+}
+
+.row {
+  display: flex;
+  margin-left: 1rem;
+  margin-bottom: .5rem;
+
+  h3 {
+    margin-top: .8rem;
+  }
+}
+
+.clr-input {
+  font-size: 1rem;
+  text-align: center;
+}
+
+.clr-control-container {
+  flex-direction: column;
+}
