@@ -1,0 +1,28 @@
+@import '../mixin.scss';
+
+:host {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  width: 100%;
+  max-height: 100%;
+}
+
+.sidenav {
+  background: #1b1e27;
+  border-right: 1px solid #455066;
+}
+
+.content-area {
+  padding: 0 !important;
+}
+
+.title {
+  @include flexbox;
+  padding-left: 1rem;
+}
+
+.chart-container {
+  @include flexbox-column-fill-space;
+  height: 60rem;
+}

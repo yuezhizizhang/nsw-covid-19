@@ -1,0 +1,13 @@
+@mixin flexbox {
+  display: flex;
+}
+
+@mixin flexbox-column {
+  @include flexbox;
+  flex-direction: column;
+}
+
+@mixin flexbox-column-fill-space {
+  @include flexbox-column;
+  flex: 1 1 auto;
+}

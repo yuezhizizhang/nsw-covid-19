@@ -1,0 +1,33 @@
+<div class="content-container">
+  <nav class="sidenav">
+    <section class="sidenav-content">
+        <a routerLink="/daily" class="nav-link">
+            Daily Count
+        </a>
+        <a routerLink="/suburb" class="nav-link active">
+            Suburb
+        </a>
+    </section>
+  </nav>
+  <div class="content-area dark">
+    <div class="row title">
+      <h3>Cumulative cases count by suburb</h3>
+    </div>
+
+    <div class="chart-container">
+      <ngx-charts-bar-horizontal
+        [scheme]="colorScheme"
+        [results]="data"
+        [gradient]="gradient"
+        [xAxis]="true"
+        [yAxis]="true"
+        [legend]="false"
+        [showXAxisLabel]="false"
+        [showYAxisLabel]="false"
+        [barPadding]="2"
+        [trimYAxisTicks]="false">
+      </ngx-charts-bar-horizontal>
+    </div>
+  </div>
+</div>
+
