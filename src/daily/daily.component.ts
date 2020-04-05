@@ -8,7 +8,10 @@ import {data} from '../data/growth';
 })
 export class DailyComponent{
 
-  data: any[];
+  series: any[];
+  total = 0;
+  lastDay = '';
+  lastDayCount = 0;
 
   // options
   showXAxis = true;
@@ -20,7 +23,12 @@ export class DailyComponent{
   };
 
   constructor() {
-    Object.assign(this, {data});
+    Object.assign(this, data);
+    if (!!this.series && this.series.length > 0) {
+      const last = this.series[this.series.length - 1];
+      this.lastDay = last.name;
+      this.lastDayCount = last.value;
+    }
   }
 
 }

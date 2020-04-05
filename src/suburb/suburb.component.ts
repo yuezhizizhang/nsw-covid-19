@@ -8,7 +8,8 @@ import {data} from '../data/surburb';
 })
 export class SuburbComponent {
 
-  data: any[];
+  series: any[];
+  total = 0;
 
   // options
   gradient = false;
@@ -18,7 +19,7 @@ export class SuburbComponent {
   };
 
   constructor() {
-    Object.assign(this, {data});
+    Object.assign(this, data);
   }
 
 }

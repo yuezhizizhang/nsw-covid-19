@@ -12,12 +12,14 @@
   <div class="content-area dark">
     <div class="row title">
       <h3>New confirmed cases, daily count</h3>
+      <h3 class="count-title">Total: {{total}}</h3>
+      <h3 class="count-title">{{lastDay}}: {{lastDayCount}}</h3>
     </div>
 
     <div class="chart-container">
       <ngx-charts-bar-vertical
         [scheme]="colorScheme"
-        [results]="data"
+        [results]="series"
         [gradient]="gradient"
         [xAxis]="showXAxis"
         [yAxis]="showYAxis"
