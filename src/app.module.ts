@@ -10,7 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { DailyComponent } from './daily/daily.component';
 import { SuburbComponent } from './suburb/suburb.component';
 import { PostcodeComponent } from './postcode/postcode.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,7 +26,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     ClarityModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

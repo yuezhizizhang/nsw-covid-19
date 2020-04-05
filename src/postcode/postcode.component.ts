@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import {data} from '../data/postcode';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
@@ -7,7 +7,9 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   templateUrl: './postcode.component.html',
   styleUrls: ['./postcode.component.scss']
 })
-export class PostcodeComponent implements OnInit {
+export class PostcodeComponent implements OnInit, AfterViewInit {
+
+  @ViewChild('input', { static: false }) postcodeInput;
 
   data: any;
   series: any[];
@@ -43,6 +45,10 @@ export class PostcodeComponent implements OnInit {
     this.lastDay = this.series.length > 0
         ? this.series[this.series.length - 1].name
         : '';
+  }
+
+  ngAfterViewInit(): void {
+    this.postcodeInput.nativeElement.focus();
   }
 
   submit(): void {

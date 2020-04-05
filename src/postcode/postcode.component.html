@@ -22,7 +22,7 @@
           <div class="clr-control-container clr-col-10 clr-col-md-12"
             [class.clr-error]="postcodeForm.get('postcode').invalid">
             <div class="clr-input-wrapper">
-              <input class="clr-input" type="text" formControlName="postcode"/>
+              <input #input class="clr-input" type="text" formControlName="postcode" autofocus/>
             </div>
             <span class="clr-subtext">NSW Postcode is 4 digits, ranging: 2000 - 2999</span>
           </div>

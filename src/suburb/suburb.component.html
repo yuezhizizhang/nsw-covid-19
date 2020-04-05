@@ -16,10 +16,27 @@
     <div class="row title">
       <h3>Cumulative cases count by suburb</h3>
       <h3 class="count-title">Total: {{total}}</h3>
+      <form class="clr-form clr-form-compact">
+        <div class="clr-form-control clr-row">
+          <div class="clr-control-container clr-col-10 clr-col-md-12">
+            <div class="clr-select-wrapper">
+              <select id="select-suburb" name="select-suburb" class="clr-select"
+                [(ngModel)]="selectSuburb"
+                (ngModelChange)="submit($event)">
+                <option value="All">All</option>
+                <option *ngFor="let name of suburbs"[value]="name">
+                  {{name}}
+                </option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </form>
     </div>
 
     <div class="chart-container">
       <ngx-charts-bar-horizontal
+        *ngIf = "selectSuburb === 'All'"
         [scheme]="colorScheme"
         [results]="series"
         [gradient]="gradient"
@@ -31,6 +48,18 @@
         [barPadding]="2"
         [trimYAxisTicks]="false">
       </ngx-charts-bar-horizontal>
+
+      <ngx-charts-bar-vertical
+        class="vertical-bar-chart"
+        *ngIf = "selectSuburb !== 'All'"
+        [view] = "[700, 600]"
+        [scheme]="verticalColorScheme"
+        [results]="suburbSeries"
+        [gradient]="gradient"
+        [xAxis]="true"
+        [yAxis]="true"
+        [legend]="false">
+      </ngx-charts-bar-vertical>
     </div>
   </div>
 </div>
