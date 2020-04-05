@@ -46,13 +46,14 @@
         [showXAxisLabel]="false"
         [showYAxisLabel]="false"
         [barPadding]="2"
-        [trimYAxisTicks]="false">
+        [trimYAxisTicks]="false"
+        (select)="submit($event.name)">
       </ngx-charts-bar-horizontal>
 
       <ngx-charts-bar-vertical
         class="vertical-bar-chart"
         *ngIf = "selectSuburb !== 'All'"
-        [view] = "[700, 600]"
+        [view] = "[700, 500]"
         [scheme]="verticalColorScheme"
         [results]="suburbSeries"
         [gradient]="gradient"
