@@ -14,20 +14,32 @@
   </nav>
   <div class="content-area dark">
     <div class="row title">
-      <h3>New confirmed cases, daily count</h3>
-      <h3 class="count-title">Total: {{total}}</h3>
-      <h3 class="count-title">{{lastDay}}: {{lastDayCount}}</h3>
+      <h3 *ngIf="!isByArea">New confirmed cases, daily count</h3>
+      <a *ngIf="isByArea" (click)="goBack()" class="back-anchor">&lt;Back</a>
+      <h3 *ngIf="!isByArea" class="count-title">Total: {{total}}</h3>
+      <h3 class="count-title">{{day}}: {{dayCount}}</h3>
     </div>
 
     <div class="chart-container">
       <ngx-charts-bar-vertical
+        *ngIf="!isByArea"
         [scheme]="colorScheme"
         [results]="series"
         [gradient]="gradient"
         [xAxis]="showXAxis"
         [yAxis]="showYAxis"
-        [legend]="false">
+        [legend]="false"
+        (select)="onSelect($event)">
       </ngx-charts-bar-vertical>
+
+      <ngx-charts-pie-chart
+        *ngIf="isByArea"
+        [scheme]="areaColorScheme"
+        [results]="areaSeries"
+        [legend]="false"
+        [labels]="true"
+        [gradient]="gradient">
+      </ngx-charts-pie-chart>
     </div>
   </div>
 </div>
