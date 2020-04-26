@@ -1,0 +1,1 @@
+rm -rf dist && npm run build:prod && mv dist/nsw-covid-19/* dist/ && rm -rf dist/nsw-covid-19 && ngh
