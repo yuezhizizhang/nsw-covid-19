@@ -3,11 +3,22 @@ import { SuburbComponent } from './suburb/suburb.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DailyComponent } from './daily/daily.component';
+import { DailySeriesComponent } from './daily/daily-series/daily-series.component';
+import { DailyAreasComponent } from './daily/daily-areas/daily-areas.component';
 
 const routes: Routes = [
   {
     path: 'daily',
-    component: DailyComponent
+    component: DailyComponent,
+    children: [
+      {
+        path: '',
+        component: DailySeriesComponent
+      }, {
+        path: ':day',
+        component: DailyAreasComponent
+      }
+    ]
   },
   {
     path: 'suburb',

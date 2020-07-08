@@ -11,11 +11,15 @@ import { DailyComponent } from './daily/daily.component';
 import { SuburbComponent } from './suburb/suburb.component';
 import { PostcodeComponent } from './postcode/postcode.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { DailySeriesComponent } from './daily/daily-series/daily-series.component';
+import { DailyAreasComponent } from './daily/daily-areas/daily-areas.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DailyComponent,
+    DailySeriesComponent,
+    DailyAreasComponent,
     SuburbComponent,
     PostcodeComponent
   ],

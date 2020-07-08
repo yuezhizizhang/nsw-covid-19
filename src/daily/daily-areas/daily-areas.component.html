@@ -1,0 +1,14 @@
+<div class="row title">
+    <a (click)="goBack()" class="back-anchor">&lt;Back</a>
+    <h3 class="count-title">{{day}}: {{dayCount}}</h3>
+</div>
+
+<div class="chart-container">
+    <ngx-charts-pie-chart
+        [scheme]="areaColorScheme"
+        [results]="areaSeries"
+        [legend]="false"
+        [labels]="true"
+        [gradient]="gradient">
+    </ngx-charts-pie-chart>
+</div>

@@ -1,0 +1,20 @@
+@import '../../mixin.scss';
+@import '../../shared.scss';
+
+:host {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    min-height: 95%;
+}
+
+.chart-container {
+  @include flexbox-column-fill-space;
+  height: 100%;
+}
+
+.count-title {
+  margin-left: 2rem;
+  color: #bb86fc;
+  font-weight: bold;
+}
